@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> IMC para adultos </title>
+</head>
+<body>
+   <h1> Calcula tu índice de masa corporal </h1>
+   <p> Esta página calcula el IMC para adultos de 20 año o más. </p>
+   <p> Para niños y adolescentes, de 2 a 19 años, utilice otra calculadora. </p>
+   <script>
+    var peso = prompt("Introduce tu peso (kg)");
+    var altura = prompt("Introduce tu altura (m)");
+    var peso_n = parseFloat(peso);
+    var altura_n = parseFloat(altura);
+    var IMC;
+    IMC = peso_n/(altura_n*altura_n);
+    IMC_f=IMC.toFixed(2);
+    if(IMC <= 18.5)
+    {
+      indicador = "bajo";
+    }
+    if(IMC >= 18.5 && IMC <= 24.9)
+    {
+      indicador = "normal";
+    }
+    if(IMC >= 25 && IMC <= 29.9)
+    {
+      indicador = "sobrepeso";
+    }
+    if(IMC > 30)
+    {
+      indicador = "obesidad";
+    }
+    document.write("Según los datos introducidos, tu IMC es <strong>" + IMC_f+"</strong>, esto indica que tu nivel de peso es <strong>" + indicador + "</strong>.");
+    </script>
+</body>
+</html>
